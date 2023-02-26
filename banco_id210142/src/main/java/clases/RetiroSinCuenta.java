@@ -10,6 +10,9 @@ public class RetiroSinCuenta {
     private int monto;
     private String nombre;
 
+    public RetiroSinCuenta() {
+    }
+
     public RetiroSinCuenta(int idretirosincuenta, int idcuenta, String folioOperacion, String contraseña, String estado, int monto, String nombre) {
         this.idretirosincuenta = idretirosincuenta;
         this.idcuenta = idcuenta;
@@ -17,6 +20,7 @@ public class RetiroSinCuenta {
         this.contraseña = contraseña;
         this.estado = estado;
         this.monto = monto;
+        this.nombre = nombre;
     }
 
     public RetiroSinCuenta(int idcuenta, String folioOperacion, String contraseña, String estado, int monto, String nombre) {
@@ -25,6 +29,7 @@ public class RetiroSinCuenta {
         this.contraseña = contraseña;
         this.estado = estado;
         this.monto = monto;
+        this.nombre = nombre;
     }
 
     public int getIdretirosincuenta() {
@@ -81,6 +86,11 @@ public class RetiroSinCuenta {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    @Override
+    public String toString() {
+        return "RetiroSinCuenta{" + "idretirosincuenta=" + idretirosincuenta + ", idcuenta=" + idcuenta + ", folioOperacion=" + folioOperacion + ", contrase\u00f1a=" + contraseña + ", estado=" + estado + ", monto=" + monto + ", nombre=" + nombre + '}';
     }
     
     

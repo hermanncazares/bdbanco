@@ -124,4 +124,22 @@ public class CuentaDAO {
         }
     }
     
+    public int selectID(String numCuenta) {
+        int idcuenta;
+        try {
+            Connection conex = this.conexion.crearConexion();
+            Statement comando = conex.createStatement();
+            String codigo = String.format("select idcuenta from tbcuenta WHERE numeroCuenta"
+                    + "='%s'",
+                    numCuenta);
+            ResultSet result = comando.executeQuery(codigo);
+            result.next();
+            idcuenta = result.getInt(1);
+            conex.close();
+        } catch (SQLException ex) {
+            return 0;
+        }
+        return idcuenta;
+    }
+    
 }
